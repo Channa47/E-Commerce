@@ -1,0 +1,8 @@
+.productContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next row */
+    gap: 16px; /* Adds space between cards */
+    justify-content: center; /* Centers the cards within the container */
+}
+
+
