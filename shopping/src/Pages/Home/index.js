@@ -6,6 +6,7 @@ import Card from "../../Components/Card";
 import style from "./index.module.scss";
 import Loading from "../../Components/Loader";
 import Navbar from "../../Components/Navbar";
+import SettingButton from "../../Components/Settings";
 
 function Home() {
   const products = useSelector((state) => state?.products?.data);
@@ -14,7 +15,7 @@ function Home() {
 
   useEffect(() => {
     setIsloading(true);
-    getAllProducts()
+    getAllProducts("https://fakestoreapi.com/products")
       .then((data) => {
         dispatch(addProducts(data));
         setIsloading(false);
@@ -32,6 +33,9 @@ function Home() {
   return (
     <>
       <Navbar />
+      <div className={style.mainContainer}>
+        <SettingButton setIsloading={setIsloading} />
+      </div>
       <div className={style.productContainer}>
         {products?.length &&
           products?.map((el) => {

@@ -1,0 +1,86 @@
+.settingBtn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: rgb(129, 110, 216);
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+  }
+  
+  .bar {
+    width: 50%;
+    height: 2px;
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 2px;
+  
+    &::before {
+      content: "";
+      width: 2px;
+      height: 2px;
+      background-color: rgb(126, 117, 255);
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: all 0.3s;
+      box-shadow: 0px 0px 5px white;
+    }
+  }
+  
+  .bar1::before {
+    transform: translateX(-4px);
+  }
+  
+  .bar2::before {
+    transform: translateX(4px);
+  }
+  
+  .settingBtn:hover .bar1::before {
+    transform: translateX(4px);
+  }
+  
+  .settingBtn:hover .bar2::before {
+    transform: translateX(-4px);
+  }
+  .mainContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center ;
+    gap: 10px;
+  }
+
+  .container {
+    width: 0; /* Start with 0 width */
+    overflow: hidden; /* Prevent content overflow during animation */
+    transition: width 0.5s ease-in-out; /* Smooth width transition */
+    background-color: #f4f4f4; /* Optional: Add a background color */
+    padding: 0; /* No padding initially to avoid content showing */
+    height: 0;
+    display: flex   ;
+  
+    button,
+    select {
+      opacity: 0; /* Initially hide the inner content */
+      transition: opacity 0.1s ease-out;
+    }
+  }
+  
+  .open {
+    width: 500px; /* Final width when open */
+    height: auto;
+  }
+  
+  .open button,
+  .open select {
+    opacity: 1; /* Show inner content when open */
+  }
+  

@@ -1,0 +1,81 @@
+.checkboxWrapper {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+  }
+  
+  .inputCheckbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  
+  .label:hover {
+    background: rgba(0, 119, 255, 0.06);
+  }
+  
+  .label .box {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid #cccfdb;
+    box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .inputCheckbox:checked + .label .box {
+    background: #07f;
+    border-color: #07f;
+    animation: wave 0.4s ease;
+  }
+  
+  .checkmark {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+  }
+  
+  .inputCheckbox:checked + .label .box .checkmark {
+    stroke-dashoffset: 0;
+  }
+  
+  .text {
+    margin-left: 8px;
+    line-height: 18px;
+    color: black;
+  }
+  
+  .inlineSvg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  @keyframes wave {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
