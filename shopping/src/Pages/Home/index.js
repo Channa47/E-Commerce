@@ -33,6 +33,7 @@ function Home() {
   return (
     <>
       <Navbar />
+      CHANNA
       <div className={style.mainContainer}>
         <SettingButton setIsloading={setIsloading} />
       </div>
