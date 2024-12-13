@@ -25,18 +25,14 @@ function Home() {
         setIsloading(false);
       });
   }, [dispatch]);
-
-  if (isLoading || !products?.length) {
-    return <Loading />;
-  }
-
+  // https://uiverse.io/ilkhoeri/thin-bobcat-83
   return (
     <>
       <Navbar />
-      CHANNA
       <div className={style.mainContainer}>
         <SettingButton setIsloading={setIsloading} />
       </div>
+      {isLoading || !products?.length ? <Loading /> : null}
       <div className={style.productContainer}>
         {products?.length &&
           products?.map((el) => {
